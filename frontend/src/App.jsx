@@ -1,14 +1,15 @@
 
-import { Button, Box } from '@chakra-ui/react'
+import { Button, Box, useColorModeValue } from '@chakra-ui/react'
 import { Routes, Route } from 'react-router-dom'
-import CreatePage from '../pages/CreatePage.jsx'
-import HomePage from '../pages/HomePage.jsx'
-import Navbar from '../components/Navbar.jsx'
+import CreatePage from './pages/CreatePage.jsx'
+import HomePage from './pages/HomePage.jsx'
+import Navbar from './components/Navbar.jsx'
+// import { useProductStore } from '../store/product.js'
 
 function App() {
-
+  // const { products } = useProductStore();
   return (
-    <Box minH={"100vh"}>
+    <Box minH={"100vh"} bg = {useColorModeValue("gray.100", "gray.900")}>
       <Navbar /> 
       <Routes>
         <Route path="/" element={<HomePage />} />
